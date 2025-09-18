@@ -44,6 +44,9 @@
     $next_pc[31:0] = $reset ? 32b'b0: $pc + 32'd4;
 
    $pc = ->1 $next_pc;
+   `READONLY_MEM($pc, $$instr[31:0]`)
+   $is_u_instr = $instr[6:2] ==? 5'b0x101;
+                   
    
    
   
